@@ -24,19 +24,22 @@ const services = [
 
 export const Services = () => {
   return (
-    <section id="servicos" className="relative py-28 md:py-40 border-t border-border">
+    <section
+      id="servicos"
+      className="relative py-32 md:py-48 border-t border-border bg-[hsl(230_28%_3.5%)]"
+    >
       <div className="container-fluid">
-        <div className="grid grid-cols-12 gap-6 mb-16 md:mb-24">
+        <div className="grid grid-cols-12 gap-6 mb-20 md:mb-32">
           <div className="col-span-12 md:col-span-4">
             <p className="font-mono text-[10px] uppercase tracking-[0.3em] text-muted-foreground mb-4">05 / O que faço</p>
-            <h2 className="font-display text-5xl md:text-6xl leading-[0.95]">
+            <h2 className="font-display text-5xl md:text-7xl leading-[0.95]">
               Três <span className="italic text-gradient">frentes</span>.
               <br />
               Um foco.
             </h2>
           </div>
           <div className="col-span-12 md:col-span-5 md:col-start-8 self-end">
-            <p className="text-muted-foreground text-lg leading-relaxed">
+            <p className="text-foreground/75 text-lg md:text-xl leading-relaxed">
               Sem catálogo gigante. Sem promessa vazia. Cada serviço foi
               construído porque resolve um problema real que vejo todo dia.
             </p>
@@ -58,32 +61,46 @@ const ServiceRow = ({ s, i }: { s: typeof services[number]; i: number }) => {
   return (
     <div
       ref={ref}
-      className="reveal group border-t border-border last:border-b py-10 md:py-14 grid grid-cols-12 gap-6 items-baseline cursor-default transition-colors hover:bg-surface-1/40"
+      className="reveal group relative border-t border-border last:border-b py-14 md:py-20 grid grid-cols-12 gap-6 items-baseline cursor-default overflow-hidden"
       style={{ transitionDelay: `${i * 80}ms` }}
     >
-                <div className="col-span-2 md:col-span-1">
-                  <span className="font-mono text-sm text-muted-foreground group-hover:text-primary transition-colors">{s.num}</span>
-                </div>
-                <div className="col-span-10 md:col-span-6">
-                  <h3 className="font-display text-3xl md:text-5xl leading-none transition-transform duration-500 group-hover:translate-x-2">
-                    {s.title}
-                    {s.soon && (
-                      <span className="ml-3 align-middle text-xs font-mono uppercase tracking-[0.2em] text-violet">
-                        em breve
-                      </span>
-                    )}
-                  </h3>
-                </div>
-                <div className="col-span-12 md:col-span-5 flex flex-col items-start md:items-end gap-3">
-                  <p className="text-muted-foreground text-base md:text-right max-w-xs">→ {s.detail}</p>
-                  <div className="flex flex-wrap gap-1.5 md:justify-end">
-                    {s.tags.map((t) => (
-                      <span key={t} className="text-[10px] font-mono uppercase tracking-wider text-muted-foreground/70 border border-border rounded-full px-2.5 py-1">
-                        {t}
-                      </span>
-                    ))}
-                  </div>
-                </div>
+      {/* hover sweep */}
+      <span
+        aria-hidden
+        className="pointer-events-none absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-700"
+        style={{
+          background:
+            "linear-gradient(90deg, transparent, hsl(var(--primary) / 0.06) 40%, hsl(var(--violet) / 0.05) 60%, transparent)",
+        }}
+      />
+      <span
+        aria-hidden
+        className="pointer-events-none absolute left-0 top-0 bottom-0 w-px bg-gradient-to-b from-transparent via-primary to-transparent scale-y-0 group-hover:scale-y-100 origin-top transition-transform duration-700"
+      />
+
+      <div className="relative col-span-2 md:col-span-1">
+        <span className="font-mono text-sm text-muted-foreground group-hover:text-primary transition-colors">{s.num}</span>
+      </div>
+      <div className="relative col-span-10 md:col-span-6">
+        <h3 className="font-display text-4xl md:text-6xl leading-[0.95] transition-all duration-500 group-hover:translate-x-3 group-hover:text-gradient">
+          {s.title}
+          {s.soon && (
+            <span className="ml-3 align-middle text-xs font-mono uppercase tracking-[0.2em] text-violet">
+              em breve
+            </span>
+          )}
+        </h3>
+      </div>
+      <div className="relative col-span-12 md:col-span-5 flex flex-col items-start md:items-end gap-4">
+        <p className="text-foreground/70 text-base md:text-lg md:text-right max-w-sm">→ {s.detail}</p>
+        <div className="flex flex-wrap gap-1.5 md:justify-end">
+          {s.tags.map((t) => (
+            <span key={t} className="text-[10px] font-mono uppercase tracking-wider text-muted-foreground border border-border rounded-full px-2.5 py-1 transition-colors group-hover:border-primary/40 group-hover:text-foreground/80">
+              {t}
+            </span>
+          ))}
+        </div>
+      </div>
     </div>
   );
 };

@@ -172,19 +172,32 @@ const ProjectRow = ({ project, index }: { project: Project; index: number }) => 
 
   if (isFeatured) {
     return (
-      <div ref={ref} className="reveal grid grid-cols-12 gap-x-6 gap-y-8 items-center">
-        <div className="col-span-12 lg:col-span-8 lg:col-start-3 relative">
-          <div className="absolute -top-10 left-0 font-mono text-xs text-muted-foreground">
+      <div ref={ref} className="reveal grid grid-cols-12 gap-x-6 gap-y-10 items-center">
+        <div className="col-span-12 lg:col-span-12 relative">
+          <div className="absolute -top-12 left-0 lg:left-4 font-mono text-xs text-muted-foreground z-10">
             <span className="text-primary">★</span> destaque · {project.num}
           </div>
-          <BrowserMock variant={project.variant} label={project.domain} />
+          {/* Floating mockup with deep glow */}
+          <div className="relative group/feat">
+            <div
+              aria-hidden
+              className="absolute -inset-10 -z-10 opacity-50 blur-3xl transition-opacity duration-1000 group-hover/feat:opacity-80"
+              style={{
+                background:
+                  "radial-gradient(ellipse at 30% 50%, hsl(var(--primary) / 0.45), transparent 60%), radial-gradient(ellipse at 80% 50%, hsl(var(--violet) / 0.35), transparent 60%)",
+              }}
+            />
+            <div className="transition-transform duration-700 group-hover/feat:scale-[1.015]">
+              <BrowserMock variant={project.variant} label={project.domain} />
+            </div>
+          </div>
         </div>
-        <div className="col-span-12 lg:col-span-10 lg:col-start-2 grid md:grid-cols-3 gap-6 md:gap-12 mt-8">
-          <h3 className="font-display text-3xl md:text-4xl">{project.client}</h3>
-          <p className="text-muted-foreground"><span className="font-mono text-[10px] uppercase tracking-[0.25em] text-foreground/50 block mb-2">Problema</span>{project.problem}</p>
+        <div className="col-span-12 lg:col-span-11 lg:col-start-2 grid md:grid-cols-3 gap-8 md:gap-14 mt-10">
+          <h3 className="font-display text-4xl md:text-5xl leading-tight">{project.client}</h3>
+          <p className="text-foreground/70"><span className="font-mono text-[10px] uppercase tracking-[0.25em] text-foreground/50 block mb-2">Problema</span>{project.problem}</p>
           <div>
-            <p className="text-muted-foreground"><span className="font-mono text-[10px] uppercase tracking-[0.25em] text-foreground/50 block mb-2">Solução</span>{project.solution}</p>
-            <a href={project.url} target="_blank" rel="noreferrer" className="mt-4 inline-flex items-center gap-2 text-foreground hover:text-primary transition-colors group/link">
+            <p className="text-foreground/70"><span className="font-mono text-[10px] uppercase tracking-[0.25em] text-foreground/50 block mb-2">Solução</span>{project.solution}</p>
+            <a href={project.url} target="_blank" rel="noreferrer" className="mt-5 inline-flex items-center gap-2 text-foreground hover:text-primary transition-colors group/link">
               Ver site <ArrowUpRight className="h-4 w-4 transition-transform group-hover/link:translate-x-0.5 group-hover/link:-translate-y-0.5" />
             </a>
           </div>
@@ -193,10 +206,25 @@ const ProjectRow = ({ project, index }: { project: Project; index: number }) => 
     );
   }
 
+  // Break perfection: offset secondary projects slightly
+  const offsetClass = alignRight ? "lg:translate-y-8" : "lg:-translate-y-4";
+
   return (
-    <div ref={ref} className="reveal grid grid-cols-12 gap-x-6 gap-y-8 items-center">
+    <div ref={ref} className={`reveal grid grid-cols-12 gap-x-6 gap-y-8 items-center ${offsetClass}`}>
       <div className={`col-span-12 lg:col-span-7 ${alignRight ? "lg:col-start-6 lg:order-2" : "lg:col-start-1"}`}>
-        <BrowserMock variant={project.variant} label={project.domain} />
+        <div className="relative group/mockwrap">
+          <div
+            aria-hidden
+            className="absolute -inset-6 -z-10 opacity-0 group-hover/mockwrap:opacity-60 blur-3xl transition-opacity duration-700"
+            style={{
+              background:
+                "radial-gradient(ellipse at 50% 50%, hsl(var(--primary) / 0.35), transparent 65%)",
+            }}
+          />
+          <div className="transition-transform duration-700 group-hover/mockwrap:scale-[1.02]">
+            <BrowserMock variant={project.variant} label={project.domain} />
+          </div>
+        </div>
       </div>
       <div className={`col-span-12 lg:col-span-4 ${alignRight ? "lg:col-start-1 lg:order-1 lg:pr-6" : "lg:col-start-9 lg:pl-6"} flex flex-col gap-5`}>
         <div className="flex items-baseline gap-3">
@@ -206,11 +234,11 @@ const ProjectRow = ({ project, index }: { project: Project; index: number }) => 
         <h3 className="font-display text-3xl md:text-4xl leading-tight">{project.client}</h3>
         <div>
           <p className="font-mono text-[10px] uppercase tracking-[0.25em] text-foreground/50 mb-2">Problema</p>
-          <p className="text-muted-foreground text-sm leading-relaxed">{project.problem}</p>
+          <p className="text-foreground/70 text-sm leading-relaxed">{project.problem}</p>
         </div>
         <div>
           <p className="font-mono text-[10px] uppercase tracking-[0.25em] text-foreground/50 mb-2">Solução</p>
-          <p className="text-muted-foreground text-sm leading-relaxed">{project.solution}</p>
+          <p className="text-foreground/70 text-sm leading-relaxed">{project.solution}</p>
         </div>
         <a href={project.url} target="_blank" rel="noreferrer" className="self-start inline-flex items-center gap-2 rounded-full border border-border px-4 py-2 text-sm hover:border-primary/60 hover:bg-primary/5 transition-all group/link">
           Ver site <ArrowUpRight className="h-3.5 w-3.5 transition-transform group-hover/link:translate-x-0.5 group-hover/link:-translate-y-0.5" />
@@ -222,12 +250,20 @@ const ProjectRow = ({ project, index }: { project: Project; index: number }) => 
 
 export const Projects = () => {
   return (
-    <section id="projetos" className="relative py-28 md:py-40 border-t border-border">
+    <section id="projetos" className="relative py-32 md:py-48 border-t border-border overflow-hidden">
+      {/* premium ambient */}
+      <div
+        className="absolute inset-0 -z-10 opacity-50"
+        style={{
+          background:
+            "radial-gradient(ellipse at 50% 0%, hsl(var(--primary) / 0.08), transparent 60%)",
+        }}
+      />
       <div className="container-fluid">
-        <div className="flex items-end justify-between gap-8 mb-20 md:mb-28">
+        <div className="flex items-end justify-between gap-8 mb-24 md:mb-36">
           <div>
             <p className="font-mono text-[10px] uppercase tracking-[0.3em] text-muted-foreground mb-4">03 / Trabalhos selecionados</p>
-            <h2 className="font-display text-5xl md:text-7xl leading-[0.95]">
+            <h2 className="font-display text-6xl md:text-8xl leading-[0.92]">
               Não é portfólio.
               <br />
               <span className="italic text-gradient">São resultados.</span>
@@ -238,7 +274,7 @@ export const Projects = () => {
           </div>
         </div>
 
-        <div className="space-y-32 md:space-y-44">
+        <div className="space-y-40 md:space-y-56">
           {projects.map((p, i) => (
             <ProjectRow key={p.num} project={p} index={i} />
           ))}
@@ -247,5 +283,7 @@ export const Projects = () => {
     </section>
   );
 };
+
+export { PhoneMock };
 
 export { PhoneMock };
