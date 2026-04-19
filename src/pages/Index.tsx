@@ -29,6 +29,7 @@ const Index = () => {
       <FinalCTA />
       <About />
       <Footer />
+      <FloatingChat />
     </main>
   );
 };
