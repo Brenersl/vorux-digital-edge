@@ -84,11 +84,6 @@ const ServiceRow = ({ s, i }: { s: typeof services[number]; i: number }) => {
                     ))}
                   </div>
                 </div>
-              </div>
-            );
-          })}
-        </div>
-      </div>
-    </section>
+    </div>
   );
 };
