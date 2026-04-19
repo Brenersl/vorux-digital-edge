@@ -44,15 +44,23 @@ export const Services = () => {
         </div>
 
         <div>
-          {services.map((s, i) => {
-            const ref = useReveal<HTMLDivElement>();
-            return (
-              <div
-                key={s.num}
-                ref={ref}
-                className="reveal group border-t border-border last:border-b py-10 md:py-14 grid grid-cols-12 gap-6 items-baseline cursor-default transition-colors hover:bg-surface-1/40"
-                style={{ transitionDelay: `${i * 80}ms` }}
-              >
+          {services.map((s, i) => (
+            <ServiceRow key={s.num} s={s} i={i} />
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+};
+
+const ServiceRow = ({ s, i }: { s: typeof services[number]; i: number }) => {
+  const ref = useReveal<HTMLDivElement>();
+  return (
+    <div
+      ref={ref}
+      className="reveal group border-t border-border last:border-b py-10 md:py-14 grid grid-cols-12 gap-6 items-baseline cursor-default transition-colors hover:bg-surface-1/40"
+      style={{ transitionDelay: `${i * 80}ms` }}
+    >
                 <div className="col-span-2 md:col-span-1">
                   <span className="font-mono text-sm text-muted-foreground group-hover:text-primary transition-colors">{s.num}</span>
                 </div>
