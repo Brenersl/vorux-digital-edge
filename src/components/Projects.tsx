@@ -285,5 +285,3 @@ export const Projects = () => {
 };
 
 export { PhoneMock };
-
-export { PhoneMock };
