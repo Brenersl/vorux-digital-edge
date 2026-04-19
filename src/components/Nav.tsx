@@ -26,8 +26,10 @@ export const Nav = () => {
     >
       <div className="container-fluid">
         <div
-          className={`flex items-center justify-between rounded-full px-4 py-2 transition-all duration-500 ${
-            scrolled ? "glass shadow-elevated" : "bg-transparent"
+          className={`flex items-center justify-between rounded-full px-4 py-2 transition-all duration-700 ${
+            scrolled
+              ? "border border-border/60 bg-background/30 backdrop-blur-2xl backdrop-saturate-150 shadow-elevated"
+              : "border border-transparent bg-transparent"
           }`}
         >
           <a href="#top" className="flex items-center gap-2.5 group">

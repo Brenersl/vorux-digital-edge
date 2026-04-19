@@ -7,6 +7,7 @@ import { Services } from "@/components/Services";
 import { Offer } from "@/components/Offer";
 import { Process } from "@/components/Process";
 import { Rhythm } from "@/components/Rhythm";
+import { WowMoment } from "@/components/WowMoment";
 import { FinalCTA } from "@/components/FinalCTA";
 import { About } from "@/components/About";
 import { Footer } from "@/components/Footer";
@@ -18,6 +19,7 @@ const Index = () => {
       <Hero />
       <Impact />
       <Projects />
+      <WowMoment />
       <Differential />
       <Services />
       <Offer />

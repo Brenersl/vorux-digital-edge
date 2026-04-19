@@ -58,10 +58,10 @@
     --gradient-section: linear-gradient(180deg, hsl(230 25% 4%) 0%, hsl(232 28% 7%) 50%, hsl(230 25% 4%) 100%);
     --gradient-text: linear-gradient(110deg, hsl(220 15% 96%) 0%, hsl(224 100% 80%) 45%, hsl(268 95% 78%) 100%);
 
-    /* Glow shadows */
-    --glow-blue: 0 0 40px hsl(224 100% 66% / 0.45), 0 0 80px hsl(224 100% 66% / 0.2);
-    --glow-violet: 0 0 40px hsl(268 95% 68% / 0.4), 0 0 80px hsl(268 95% 68% / 0.18);
-    --glow-soft: 0 0 60px hsl(224 100% 66% / 0.18);
+    /* Glow shadows — softer, more spread */
+    --glow-blue: 0 0 60px hsl(224 100% 66% / 0.45), 0 0 120px hsl(224 100% 66% / 0.18);
+    --glow-violet: 0 0 60px hsl(268 95% 68% / 0.4), 0 0 120px hsl(268 95% 68% / 0.16);
+    --glow-soft: 0 0 80px hsl(224 100% 66% / 0.18);
 
     --shadow-elevated: 0 30px 60px -20px hsl(230 50% 2% / 0.7), 0 0 0 1px hsl(232 20% 16% / 0.6);
 
@@ -212,8 +212,8 @@
 }
 
 @keyframes pulse-glow {
-  0%, 100% { box-shadow: 0 0 30px hsl(var(--primary) / 0.4), 0 0 60px hsl(var(--violet) / 0.2); }
-  50% { box-shadow: 0 0 50px hsl(var(--primary) / 0.6), 0 0 100px hsl(var(--violet) / 0.35); }
+  0%, 100% { box-shadow: 0 0 40px hsl(var(--primary) / 0.35), 0 0 90px hsl(var(--violet) / 0.18); }
+  50% { box-shadow: 0 0 70px hsl(var(--primary) / 0.55), 0 0 140px hsl(var(--violet) / 0.3); }
 }
 
 @keyframes float-slow {
