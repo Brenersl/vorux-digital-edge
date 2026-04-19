@@ -11,6 +11,7 @@ import { WowMoment } from "@/components/WowMoment";
 import { FinalCTA } from "@/components/FinalCTA";
 import { About } from "@/components/About";
 import { Footer } from "@/components/Footer";
+import { FloatingChat } from "@/components/FloatingChat";
 
 const Index = () => {
   return (
