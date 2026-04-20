@@ -1,3 +1,4 @@
+import { Instagram } from "lucide-react";
 import logo from "@/assets/vorux-logo.png";
 
 export const Footer = () => {
@@ -20,9 +21,21 @@ export const Footer = () => {
             <a href="#contato" className="hover:text-foreground transition-colors">Contato</a>
           </div>
 
-          <p className="font-mono text-[10px] uppercase tracking-[0.25em] text-muted-foreground">
-            © {new Date().getFullYear()} — Todos os direitos reservados
-          </p>
+          <div className="flex flex-col md:items-end gap-3">
+            <a
+              href="https://www.instagram.com/voruxagency/"
+              target="_blank"
+              rel="noreferrer"
+              aria-label="Instagram da Vorux Agency"
+              className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors group"
+            >
+              <Instagram className="h-4 w-4 transition-transform group-hover:scale-110" />
+              <span>@voruxagency</span>
+            </a>
+            <p className="font-mono text-[10px] uppercase tracking-[0.25em] text-muted-foreground">
+              © {new Date().getFullYear()} — Todos os direitos reservados
+            </p>
+          </div>
         </div>
 
         <div className="mt-12 hairline" />
