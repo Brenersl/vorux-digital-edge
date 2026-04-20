@@ -35,13 +35,13 @@ export const Nav = () => {
           <a href="#top" className="flex items-center gap-2.5 group">
             <img
               src={logo}
-              alt="Vorux Studio"
+              alt="Vorux Agency"
               width={36}
               height={36}
               className="h-9 w-9 rounded-md object-cover transition-transform duration-500 group-hover:scale-110"
             />
             <span className="font-display text-xl tracking-tight">
-              Vorux<span className="text-muted-foreground"> studio</span>
+              Vorux<span className="text-muted-foreground"> agency</span>
             </span>
           </a>
 

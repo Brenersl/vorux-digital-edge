@@ -6,9 +6,9 @@ export const Footer = () => {
       <div className="container-fluid">
         <div className="flex flex-col md:flex-row items-start md:items-end justify-between gap-8">
           <div className="flex items-center gap-3">
-            <img src={logo} alt="Vorux" width={32} height={32} loading="lazy" className="h-8 w-8 rounded-md" />
+            <img src={logo} alt="Vorux Agency" width={32} height={32} loading="lazy" className="h-8 w-8 rounded-md" />
             <div>
-              <p className="font-display text-lg leading-none">Vorux <span className="text-muted-foreground">studio</span></p>
+              <p className="font-display text-lg leading-none">Vorux <span className="text-muted-foreground">agency</span></p>
               <p className="font-mono text-[10px] uppercase tracking-[0.25em] text-muted-foreground mt-1">est. {new Date().getFullYear()} · Brasil</p>
             </div>
           </div>

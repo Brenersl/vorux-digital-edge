@@ -84,7 +84,7 @@ export const FloatingChat = () => {
       {/* Chat completo (quando aberto) */}
       <div
         role="dialog"
-        aria-label="Chat com Brener — Vorux Studio"
+        aria-label="Chat com Brener — Vorux Agency"
         className={`fixed bottom-5 right-5 md:bottom-8 md:right-8 z-[60] w-[min(360px,calc(100vw-2.5rem))] origin-bottom-right transition-all duration-500 ease-out ${
           open
             ? "opacity-100 translate-y-0 scale-100"
@@ -112,7 +112,7 @@ export const FloatingChat = () => {
             <div className="relative">
               <img
                 src={avatar}
-                alt="Brener — Vorux Studio"
+                alt="Brener — Vorux Agency"
                 width={44}
                 height={44}
                 loading="lazy"
@@ -125,7 +125,7 @@ export const FloatingChat = () => {
 
             <div className="flex-1 min-w-0">
               <p className="text-sm font-medium text-foreground leading-tight truncate">
-                Brener <span className="text-muted-foreground">— Vorux Studio</span>
+                Brener <span className="text-muted-foreground">— Vorux Agency</span>
               </p>
               <p className="font-mono text-[10px] uppercase tracking-[0.25em] text-muted-foreground mt-1">
                 <span className="inline-block h-1.5 w-1.5 rounded-full bg-[hsl(150_80%_55%)] mr-1.5 align-middle" />
