@@ -205,7 +205,7 @@ const ProjectRow = ({ project, index }: { project: Project; index: number }) => 
               }}
             />
             <div className="transition-transform duration-700 group-hover/feat:scale-[1.015]">
-              <BrowserMock variant={project.variant} label={project.domain} />
+              <BrowserMock variant={project.variant} label={project.domain} screenshot={project.screenshot} alt={`Site de ${project.client}`} />
             </div>
           </div>
         </div>
@@ -239,7 +239,7 @@ const ProjectRow = ({ project, index }: { project: Project; index: number }) => 
             }}
           />
           <div className="transition-transform duration-700 group-hover/mockwrap:scale-[1.02]">
-            <BrowserMock variant={project.variant} label={project.domain} />
+            <BrowserMock variant={project.variant} label={project.domain} screenshot={project.screenshot} alt={`Site de ${project.client}`} />
           </div>
         </div>
       </div>
