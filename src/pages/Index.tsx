@@ -4,7 +4,6 @@ import { Impact } from "@/components/Impact";
 import { Projects } from "@/components/Projects";
 import { Differential } from "@/components/Differential";
 import { Services } from "@/components/Services";
-import { Offer } from "@/components/Offer";
 import { Process } from "@/components/Process";
 import { Rhythm } from "@/components/Rhythm";
 import { WowMoment } from "@/components/WowMoment";
@@ -23,7 +22,6 @@ const Index = () => {
       <WowMoment />
       <Differential />
       <Services />
-      <Offer />
       <Process />
       <Rhythm />
       <FinalCTA />

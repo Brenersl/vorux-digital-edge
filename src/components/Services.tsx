@@ -9,12 +9,18 @@ const services = [
   },
   {
     num: "02",
+    title: "Social Media",
+    detail: "criação de posts estratégicos para Instagram com foco em atrair, engajar e gerar demanda",
+    tags: ["Design de posts", "Planejamento", "Conversão"],
+  },
+  {
+    num: "03",
     title: "Automação para Instagram",
     detail: "respostas automáticas e captação de leads",
     tags: ["DM bot", "Lead capture", "Funis"],
   },
   {
-    num: "03",
+    num: "04",
     title: "Sistema para psicólogos",
     detail: "produto em desenvolvimento com acesso antecipado",
     tags: ["SaaS", "Em beta", "Early access"],
@@ -33,7 +39,7 @@ export const Services = () => {
           <div className="col-span-12 md:col-span-4">
             <p className="font-mono text-[10px] uppercase tracking-[0.3em] text-muted-foreground mb-4">05 / O que faço</p>
             <h2 className="font-display text-5xl md:text-7xl leading-[0.95]">
-              Três <span className="italic text-gradient">frentes</span>.
+              Quatro <span className="italic text-gradient">frentes</span>.
               <br />
               Um foco.
             </h2>

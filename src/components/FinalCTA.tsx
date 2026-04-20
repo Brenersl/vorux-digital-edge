@@ -1,5 +1,8 @@
 import { MessageCircle, ArrowUpRight } from "lucide-react";
 
+const WHATSAPP_URL =
+  "https://wa.me/5531992609659?text=Fala%20Brener,%20vim%20pelo%20site%20e%20quero%20um%20orçamento";
+
 export const FinalCTA = () => {
   return (
     <section id="contato" className="relative py-32 md:py-48 border-t border-border overflow-hidden">
@@ -21,7 +24,7 @@ export const FinalCTA = () => {
 
             <div className="mt-14 md:mt-20 flex flex-wrap items-center gap-x-6 gap-y-4">
               <a
-                href="https://wa.me/5500000000000?text=Quero%20um%20site%20que%20gera%20clientes"
+                href={WHATSAPP_URL}
                 target="_blank"
                 rel="noreferrer"
                 className="group relative inline-flex items-center gap-3 rounded-full px-8 py-5 text-base md:text-lg font-medium text-primary-foreground bg-gradient-brand animate-pulse-glow transition-transform hover:scale-[1.02]"
