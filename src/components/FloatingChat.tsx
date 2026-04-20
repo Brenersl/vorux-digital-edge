@@ -196,17 +196,30 @@ export const FloatingChat = () => {
           </div>
         </div>
       </div>
-    </div>
+    </>
   );
 };
 
 const Bubble = ({
   children,
+  delay = 0,
 }: {
   children: React.ReactNode;
+  delay?: number;
 }) => {
+  const [show, setShow] = useState(delay === 0);
+  useEffect(() => {
+    if (delay === 0) return;
+    const t = setTimeout(() => setShow(true), delay);
+    return () => clearTimeout(t);
+  }, [delay]);
+
   return (
-    <div className="max-w-[85%] rounded-2xl rounded-tl-sm bg-surface-2/80 border border-border/60 px-4 py-2.5 text-sm text-foreground/90 leading-relaxed animate-in fade-in slide-in-from-bottom-2 duration-500">
+    <div
+      className={`max-w-[85%] rounded-2xl rounded-tl-sm bg-surface-2/80 border border-border/60 px-4 py-2.5 text-sm text-foreground/90 leading-relaxed transition-all duration-400 ease-out ${
+        show ? "opacity-100 translate-y-0" : "opacity-0 translate-y-1"
+      }`}
+    >
       {children}
     </div>
   );
