@@ -172,6 +172,7 @@ const projects: Project[] = [
     url: "https://ghcengenharia.netlify.app/",
     variant: "engineering",
     domain: "ghcengenharia.com",
+    screenshot: projectGhc,
   },
   {
     num: "03",
@@ -181,6 +182,7 @@ const projects: Project[] = [
     url: "http://ajsconstrucoes.com.br/",
     variant: "construction",
     domain: "ajsconstrucoes.com.br",
+    screenshot: projectAjs,
   },
 ];
 
