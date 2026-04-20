@@ -1,7 +1,7 @@
 import { ArrowUpRight } from "lucide-react";
 
 const WHATSAPP_URL =
-  "https://wa.me/5531992609659?text=Fala%20Brener,%20vim%20pelo%20site%20e%20quero%20um%20orçamento";
+  "https://wa.me/5531992288828?text=Fala%20Brener,%20vim%20pelo%20site%20e%20quero%20um%20orçamento";
 
 export const FinalCTA = () => {
   return (
