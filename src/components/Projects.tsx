@@ -1,6 +1,8 @@
 import { ArrowUpRight } from "lucide-react";
 import { useReveal } from "@/hooks/useReveal";
 import projectIdamir from "@/assets/project-idamir.png";
+import projectGhc from "@/assets/project-ghc.png";
+import projectAjs from "@/assets/project-ajs.png";
 
 type Variant = "psychology" | "engineering" | "construction";
 
