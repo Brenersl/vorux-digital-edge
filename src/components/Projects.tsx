@@ -159,9 +159,9 @@ const projects: Project[] = [
     client: "Idamir Duarte",
     problem: "Psicóloga sem presença online clara — pacientes não conseguiam saber valores, abordagem ou horários.",
     solution: "Site institucional acolhedor com agendamento direto via WhatsApp e seções estratégicas para gerar confiança.",
-    url: "https://idamirduarte.netlify.app/",
+    url: "https://idamirduarte.com.br/",
     variant: "psychology",
-    domain: "idamirduarte.netlify.app",
+    domain: "idamirduarte.com.br",
     screenshot: projectIdamir,
   },
   {
