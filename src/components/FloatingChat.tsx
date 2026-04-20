@@ -1,29 +1,26 @@
 import { useEffect, useState } from "react";
-import { X, ArrowUpRight, MessageCircle } from "lucide-react";
+import { X, ArrowUpRight } from "lucide-react";
 import avatar from "@/assets/brener-avatar.jpg";
 
-const STORAGE_KEY = "vorux-chat-dismissed";
 const WHATSAPP_URL =
   "https://wa.me/5531992288828?text=Fala%20Brener,%20vim%20pelo%20site%20e%20quero%20um%20orçamento";
 
 export const FloatingChat = () => {
   const [open, setOpen] = useState(false);
-  const [mounted, setMounted] = useState(true);
   const [msg1, setMsg1] = useState(false);
   const [typing, setTyping] = useState(false);
   const [msg2, setMsg2] = useState(false);
 
   useEffect(() => {
-    if (typeof window === "undefined") return;
-    if (sessionStorage.getItem(STORAGE_KEY) === "1") {
-      setMounted(false);
-      return;
-    }
-  }, []);
+    if (open) return;
+    // reset ao fechar
+    setMsg1(false);
+    setTyping(false);
+    setMsg2(false);
+  }, [open]);
 
   const handleOpen = () => {
     setOpen(true);
-    // Sequência de mensagens
     setTimeout(() => setMsg1(true), 300);
     setTimeout(() => setTyping(true), 1200);
     setTimeout(() => {
@@ -34,17 +31,7 @@ export const FloatingChat = () => {
 
   const handleClose = () => {
     setOpen(false);
-    setMsg1(false);
-    setTyping(false);
-    setMsg2(false);
-    try {
-      sessionStorage.setItem(STORAGE_KEY, "1");
-    } catch {
-      /* noop */
-    }
   };
-
-  if (!mounted) return null;
 
   return (
     <>
