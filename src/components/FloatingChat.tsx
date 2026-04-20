@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { X, ArrowUpRight } from "lucide-react";
-import avatar from "@/assets/brener-avatar.jpg";
+import avatar from "@/assets/brener-";
 
 const WHATSAPP_URL =
   "https://wa.me/5531992288828?text=Fala%20Brener,%20vim%20pelo%20site%20e%20quero%20um%20orçamento";
