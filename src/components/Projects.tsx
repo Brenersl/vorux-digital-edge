@@ -1,14 +1,29 @@
 import { ArrowUpRight } from "lucide-react";
 import { useReveal } from "@/hooks/useReveal";
+import projectIdamir from "@/assets/project-idamir.png";
 
 type Variant = "psychology" | "engineering" | "construction";
 
 interface ScreenProps {
   variant: Variant;
+  screenshot?: string;
+  alt?: string;
 }
 
 /* Pure-CSS abstract site previews — no AI text artifacts. */
-const Screen = ({ variant }: ScreenProps) => {
+const Screen = ({ variant, screenshot, alt }: ScreenProps) => {
+  if (screenshot) {
+    return (
+      <div className="absolute inset-0 bg-surface-2 overflow-hidden">
+        <img
+          src={screenshot}
+          alt={alt ?? "Screenshot do projeto"}
+          loading="lazy"
+          className="absolute inset-0 h-full w-full object-cover object-top"
+        />
+      </div>
+    );
+  }
   if (variant === "psychology") {
     return (
       <div className="absolute inset-0 bg-[hsl(220_30%_8%)] text-foreground">
@@ -101,7 +116,7 @@ const Screen = ({ variant }: ScreenProps) => {
   );
 };
 
-const BrowserMock = ({ variant, label }: { variant: Variant; label: string }) => (
+const BrowserMock = ({ variant, label, screenshot, alt }: { variant: Variant; label: string; screenshot?: string; alt?: string }) => (
   <div className="browser-frame group/mock relative aspect-[16/10] w-full transition-all duration-700 hover:shadow-glow-blue">
     <div className="absolute top-0 inset-x-0 h-7 md:h-9 bg-surface-3 border-b border-border flex items-center px-3 gap-2 z-10">
       <span className="h-2 w-2 md:h-2.5 md:w-2.5 rounded-full bg-foreground/20" />
@@ -110,17 +125,17 @@ const BrowserMock = ({ variant, label }: { variant: Variant; label: string }) =>
       <span className="ml-3 hidden sm:inline font-mono text-[10px] text-muted-foreground">{label}</span>
     </div>
     <div className="absolute inset-0 top-7 md:top-9 overflow-hidden">
-      <Screen variant={variant} />
+      <Screen variant={variant} screenshot={screenshot} alt={alt} />
     </div>
     <div className="pointer-events-none absolute inset-0 opacity-0 group-hover/mock:opacity-100 transition-opacity duration-500" style={{ background: "radial-gradient(circle at 50% 100%, hsl(var(--primary) / 0.25), transparent 60%)" }} />
   </div>
 );
 
-const PhoneMock = ({ variant }: { variant: Variant }) => (
+const PhoneMock = ({ variant, screenshot, alt }: { variant: Variant; screenshot?: string; alt?: string }) => (
   <div className="relative mx-auto w-[180px] md:w-[220px] aspect-[9/19] rounded-[2.2rem] border border-border bg-surface-3 p-2 shadow-elevated">
     <div className="absolute top-2 left-1/2 -translate-x-1/2 h-4 w-20 rounded-b-2xl bg-background z-10" />
     <div className="relative h-full w-full overflow-hidden rounded-[1.7rem]">
-      <Screen variant={variant} />
+      <Screen variant={variant} screenshot={screenshot} alt={alt} />
     </div>
   </div>
 );
@@ -133,6 +148,7 @@ interface Project {
   url: string;
   variant: Variant;
   domain: string;
+  screenshot?: string;
 }
 
 const projects: Project[] = [
@@ -144,6 +160,7 @@ const projects: Project[] = [
     url: "https://idamirduarte.netlify.app/",
     variant: "psychology",
     domain: "idamirduarte.com",
+    screenshot: projectIdamir,
   },
   {
     num: "02",
@@ -188,7 +205,7 @@ const ProjectRow = ({ project, index }: { project: Project; index: number }) => 
               }}
             />
             <div className="transition-transform duration-700 group-hover/feat:scale-[1.015]">
-              <BrowserMock variant={project.variant} label={project.domain} />
+              <BrowserMock variant={project.variant} label={project.domain} screenshot={project.screenshot} alt={`Site de ${project.client}`} />
             </div>
           </div>
         </div>
@@ -222,7 +239,7 @@ const ProjectRow = ({ project, index }: { project: Project; index: number }) => 
             }}
           />
           <div className="transition-transform duration-700 group-hover/mockwrap:scale-[1.02]">
-            <BrowserMock variant={project.variant} label={project.domain} />
+            <BrowserMock variant={project.variant} label={project.domain} screenshot={project.screenshot} alt={`Site de ${project.client}`} />
           </div>
         </div>
       </div>
