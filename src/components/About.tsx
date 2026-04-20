@@ -1,4 +1,4 @@
-import logo from "@/assets/vorux-logo.png";
+import brenerPhoto from "@/assets/brener-photo.jpg";
 
 export const About = () => {
   return (
@@ -8,7 +8,7 @@ export const About = () => {
           <div className="col-span-12 md:col-span-4">
             <p className="font-mono text-[10px] uppercase tracking-[0.3em] text-muted-foreground mb-8">10 / Quem está por trás</p>
             <div className="relative inline-block">
-              <img src={logo} alt="Vorux Agency" width={140} height={140} loading="lazy" className="h-32 w-32 md:h-36 md:w-36 rounded-2xl object-cover" />
+              <img src={brenerPhoto} alt="Brener — fundador da Vorux Agency" width={180} height={180} loading="lazy" className="h-40 w-40 md:h-48 md:w-48 rounded-2xl object-cover" />
               <div className="absolute -inset-4 -z-10 rounded-3xl blur-2xl opacity-50" style={{ background: "var(--gradient-brand)" }} />
             </div>
           </div>
