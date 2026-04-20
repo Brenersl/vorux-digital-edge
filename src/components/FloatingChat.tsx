@@ -48,11 +48,11 @@ export const FloatingChat = () => {
 
   return (
     <>
-      {/* Botão flutuante (quando fechado) */}
+      {/* Botão flutuante (sempre visível) */}
       <button
         onClick={handleOpen}
         className={`fixed bottom-5 right-5 md:bottom-8 md:right-8 z-[60] transition-all duration-500 ease-out ${
-          open ? "opacity-0 scale-75 pointer-events-none" : "opacity-100 scale-100"
+          open ? "scale-90" : "scale-100"
         }`}
         aria-label="Abrir chat"
       >
