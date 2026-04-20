@@ -161,7 +161,7 @@ const projects: Project[] = [
     solution: "Site institucional acolhedor com agendamento direto via WhatsApp e seções estratégicas para gerar confiança.",
     url: "https://idamirduarte.netlify.app/",
     variant: "psychology",
-    domain: "idamirduarte.com",
+    domain: "idamirduarte.netlify.app",
     screenshot: projectIdamir,
   },
   {
@@ -171,7 +171,7 @@ const projects: Project[] = [
     solution: "Portal técnico com catálogo de serviços, formulário de orçamento e identidade visual sólida.",
     url: "https://ghcengenharia.netlify.app/",
     variant: "engineering",
-    domain: "ghcengenharia.com",
+    domain: "ghcengenharia.netlify.app",
     screenshot: projectGhc,
   },
   {
