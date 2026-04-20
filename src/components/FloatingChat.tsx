@@ -161,13 +161,6 @@ export const FloatingChat = () => {
                   href={WHATSAPP_URL}
                   target="_blank"
                   rel="noreferrer"
-                  onClick={() => {
-                    try {
-                      sessionStorage.setItem(STORAGE_KEY, "1");
-                    } catch {
-                      /* noop */
-                    }
-                  }}
                   className="group relative mt-2 inline-flex w-full items-center justify-center gap-2 rounded-full px-5 py-3.5 text-sm font-medium text-primary-foreground bg-gradient-brand transition-transform hover:scale-[1.02]"
                 >
                   <span className="absolute inset-0 rounded-full bg-gradient-brand opacity-0 group-hover:opacity-70 blur-xl transition-opacity" />
