@@ -4,7 +4,7 @@ import avatar from "@/assets/brener-avatar.jpg";
 
 const STORAGE_KEY = "vorux-chat-dismissed";
 const WHATSAPP_URL =
-  "https://wa.me/5531992609659?text=Fala%20Brener,%20vim%20pelo%20site%20e%20quero%20um%20orçamento";
+  "https://wa.me/5531992288828?text=Fala%20Brener,%20vim%20pelo%20site%20e%20quero%20um%20orçamento";
 
 export const FloatingChat = () => {
   const [open, setOpen] = useState(false);
